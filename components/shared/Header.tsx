@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Button } from "../ui/button"
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import NavItems from "./NavItems"
+import MobileNav from "./MobileNav"
 const Header = () => {
     return (
         <header className="w-full border-b">
@@ -19,7 +20,7 @@ const Header = () => {
                 <div className="flex w-32 justify-end">
                     <SignedIn>
                         <UserButton afterSignOutUrl="/" />
-                        <NavItems />
+                        <MobileNav />
                     </SignedIn>
                     <SignedOut>
                         <Button asChild className="rounded-full" size="lg">
@@ -29,6 +30,7 @@ const Header = () => {
                         </Button>
                     </SignedOut>
                 </div>
+               
             </div>
         </header>
     )
